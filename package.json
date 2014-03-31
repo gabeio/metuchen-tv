@@ -1,0 +1,21 @@
+{
+  "name": "http-server",
+  "preferGlobal": false,
+  "version": "0.0.1",
+  "author": "Gabe <gabe@shov.me>",
+  "description": "a simple map and event highlighter",
+  "scripts": {
+    "start": "lsc ./app.ls"
+  },
+  "main": "./app.ls",
+  "dependencies": {
+    "express": "^3.5.1",
+    "yargs": "^1.2.1",
+    "swig": "^1.3.2",
+    "moment": "^2.5.1",
+    "js-yaml": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=0.6"
+  }
+}
