@@ -1,5 +1,11 @@
+#ignore all
 /*
-
+#except
+#::folders
+!statics/*
+#::files
 !.gitignore
 !app.ls
 !app.html
+!package.json
+
