@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="refresh" content="30">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Metuchen Sportsplex</title>
+		<!--<link rel="stylesheet" src="/src/css/bootstrap.min.css">-->
+		<!--<script src="/stc/js/bootstrap.min.js"></script>-->
+		<style>
+			html,body{
+				width:100%;
+				height:100%;
+				border:0;
+				margin:0;
+				padding:0;
+				font-family: arial;
+				font-size:40px;
+			}
+			/*body{
+				transform:rotate(180deg);
+				-webkit-transform: rotate(180deg);
+			}*/
+			div{background:#ccc;padding:2px;word-wrap:break-word;} /* all top level divs are to be gray unless otherwise stated*/
+			div>div{background: inherit;word-wrap:break-word;} /**/
+			.yah{
+				position: absolute;
+				padding: 40px;
+				border-top-left-radius:40px;
+				border-bottom-left-radius:40px;
+				border-top-right-radius:40px;
+				border-bottom-right-radius:40px;
+				left: 44%;
+				top: 52%;
+			}
+			.f1{
+				position: absolute;
+				top:5%;
+				bottom:51%;
+				left:3%;
+				width:40%;
+				overflow: hidden;
+				text-align: center;
+			}
+			.f1a{
+				box-sizing:border-box;
+				background: inherit;
+				position: relative;
+				float:right;
+				width:50%;
+				text-align: center;
+				height: 100%;
+				border-left:1px black dashed;
+			}
+			.f1b{
+				box-sizing:border-box;
+				background: inherit;
+				position: relative;
+				float:left;
+				width: 50%;
+				text-align: center;
+				height: 100%;
+				border-right:1px black dashed;
+			}
+			.f2{
+				position: absolute;
+				top:51%;
+				bottom:5%;
+				left:3%;
+				width:40%;
+				overflow: hidden;
+				text-align: center;
+			}
+			.f2a{
+				box-sizing:border-box;
+				background: inherit;
+				position: relative;
+				float:right;
+				width:50%;
+				text-align: center;
+				height: 100%;
+				border-left:1px black dashed;
+			}
+			.f2b{
+				box-sizing:border-box;
+				background: inherit;
+				position: relative;
+				float:left;
+				width:50%;
+				text-align: center;
+				height: 100%;
+				border-right:1px black dashed;
+			}
+			.rink{
+				position: absolute;
+				padding: 10px;
+				top: 5%;
+				right: 3%;
+				left: 50%;
+				height: 43%;
+				overflow: hidden;
+				text-align: center;
+				border-top-right-radius:100px;
+				border-bottom-right-radius:100px;
+				border-top-left-radius:100px;
+				border-bottom-left-radius:100px;
+			}
+			.c1{
+				background: inherit;
+				position: relative;
+				height: 100%;
+				float: left;
+				width: 33.3333333%;
+			}
+			.c2{
+				background: inherit;
+				position: relative;
+				height: 100%;
+				float: left;
+				width: 33.3333333%;
+			}
+			.c3{
+				background: inherit;
+				position: relative;
+				height: 100%;
+				float: right;
+				width: 33.3333333%;
+			}
+			.boarded{
+				position: absolute;
+				bottom: 5%;
+				right: 3%;
+				top: 66%;
+				width: 20%;
+				overflow: hidden;
+			}
+			.o{
+				position: absolute;
+				color:white;
+				background: black;
+				left:50%;
+				top:70%;
+				bottom: 5%;
+				z-index: 100;
+			}
+			.rr{
+				position: absolute;
+				background: black;
+				left:68%;
+				top:87%;
+				bottom: 5%;
+				width: 9%;
+				text-align: center;
+				display: block;
+				margin: auto;
+			}
+			.pr{
+				position: absolute;
+				color:white;
+				background: black;
+				left:55%;
+				top:87%;
+				bottom: 5%;
+				padding-left:20px;
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="o">Office</div>
+		<div class="rr"><img src="/stc/restroom.svg" style="width:100%;height:100%;"></div>
+		<div class="pr">Party Rooms</div>
+		<div class="f1" {% if surfaces.field1 %}style="background:orange !important;"{% endif %}>
+			<div>Field 1{% if surfaces.field1 %}: {{surfaces.field1}}{% endif %}</div>
+			<span class="f1a" {% if surfaces.field1a %}style="background:orange !important;"{% endif %}>
+				Field 1 A{% if surfaces.field1a %}: {{surfaces.field1a}}{% endif %}
+			</span>
+			<span class="f1b" {% if surfaces.field1b %}style="background:yellow !important;"{% endif %}>
+				Field 1 B{% if surfaces.field1b %}: {{surfaces.field1b}}{% endif %}
+			</span>
+		</div>
+		
+		<div class="f2" {% if surfaces.field2 %}style="background:orange !important;"{% endif %}>
+			<div>Field 2{% if surfaces.field2 %}: {{surfaces.field2}}{% endif %}</div>
+			<span class="f2a" {% if surfaces.field2a %}style="background:orange !important;"{% endif %}>
+				Field 2 A{% if surfaces.field2a %}: {{surfaces.field2a}}{% endif %}
+			</span>
+			<span class="f2b" {% if surfaces.field2b %}style="background:yellow !important;"{% endif %}>
+				Field 2 B{% if surfaces.field2b %}: {{surfaces.field2b}}{% endif %}
+			</span>
+		</div>
+
+		<!-- you are here dot -->
+		<div class="yah" style="background:red;color:white;">
+		You are here.
+		</div>
+
+		<div class="rink" {% if surfaces.rink %}style="background:orange !important;"{% endif %}>
+			<div>Rink{% if surfaces.rink %}: {{surfaces.rink}}{% endif %}</div>
+			<span class="c1" {% if surfaces.court1 %}style="background:orange !important;"{% endif %}>
+				Court 1{% if surfaces.court1 %}: {{surfaces.court1}}{% endif %}
+			</span>
+			<span class="c2" {% if surfaces.court2 %}style="background:yellow !important;"{% endif %}>
+				Court 2{% if surfaces.court2 %}: {{surfaces.court2}}{% endif %}
+			</span>
+			<span class="c3" {% if surfaces.court3 %}style="background:orange !important;"{% endif %}>
+				Court 3{% if surfaces.court3 %}: {{surfaces.court3}}{% endif %}
+			</span>
+		</div>
+
+		<div class="boarded" {% if surfaces.boarded %}style="background:orange !important;"{% endif %}>
+			Boarded Field<br />
+			{% if surfaces.boarded %}{{surfaces.boarded}}{% endif %}
+		</div>
+	</body>
+</html>
